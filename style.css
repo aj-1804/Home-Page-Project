@@ -1,0 +1,554 @@
+:root {
+    --color-black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fbf7f3;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    padding: 2rem 5rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+input {
+    display: none;
+}
+
+#hamburger-icon {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+#hamburger-icon div {
+    height: 1.2px;
+    width: 40%;
+    background-color: var(--color-black);
+    transform-origin: left;
+    transition: all 0.2s;
+    position: relative;
+}
+
+#hamburger-icon div::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-black);
+    transition: all 0.2s;
+}
+
+#hamburger-icon div::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-black);
+    transition: all 0.2s;
+}
+
+#nav-check:checked + #hamburger-icon div {
+    background-color: transparent;
+}
+
+#nav-check:checked + #hamburger-icon div::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#nav-check:checked + #hamburger-icon div::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav h2 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    transform: translateY(0);
+    transition: all 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    color: var(--color-black);
+    font-size: 1.4rem;
+    border: 1px solid var(--color-black);
+    border-radius: 3rem;
+    font-weight: 600;
+    transform: translateY(0);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+nav #contact-btn {
+    transform: translateY(0);
+}
+
+#nav-open {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: -1;
+}
+
+#nav-open div {
+    width: 4rem;
+}
+
+#nav-check:checked ~ #hamburger-icon {
+    z-index: 10;
+}
+
+#nav-check:checked ~ #nav-open {
+    z-index: 1;
+}
+
+#nav-check:checked ~ #nav-open #nav-btn1,
+#nav-check:checked ~ #nav-open #nav-btn2 {
+    transform: translate(0);
+    opacity: 1;
+}
+
+#nav-check:not(:checked) ~ #nav-open #nav-btn1,
+#nav-check:not(:checked) ~ #nav-open #nav-btn2 {
+    transform: translateX(-10rem);
+    opacity: 0;
+}
+
+#nav-check:checked ~ h2 {
+    transform: translateY(-8rem);
+}
+
+#nav-check:checked ~ #contact-btn {
+    transform: translateY(-8rem);
+}
+
+/* HERO SECTION STARTS */
+
+#hero-section {
+    display: flex;
+}
+
+/* Left Part*/
+
+#hero-section-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+    position: relative;
+}
+
+#hero-section-left h1 {
+    font-size: 5vw;
+    line-height: 5vw;
+    font-weight: 500;
+}
+
+h1 img {
+    margin-bottom: -1vw;
+}
+
+#hero-para {
+    text-transform: uppercase;
+    width: 20rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-bottom: 4rem;
+}
+
+#hero-section label {
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    transition: all 0.4s;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#hero-section input:checked + label {
+    background-color: var(--color-black);
+    color: #ebebeb;
+}
+
+#user-reviews {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+.user-img-container {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fbf7f3;
+    display: inline-block;
+}
+
+#user-image1 {
+    background-image: url(Images/userImg1.jpg);
+}
+
+#user-image2 {
+    background-image: url(Images/userImg2.jpg);
+    margin-left: -1.8rem;
+}
+
+#user-reviews-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#user-reviews-text h2 {
+    font-weight: 500;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+#user-reviews-text h2 span {
+    font-size: 1.4rem;
+}
+
+#user-reviews-text p {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/* Right Part */
+
+#hero-section-right {
+    width: 50%;
+    position: relative;
+}
+
+#hero-image-container {
+    width: 100%;
+    height: 85vh;
+    border-radius: 2rem;
+    border-top-right-radius: 15rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#hero-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#hero-img-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background-color: #fbf7f3;
+    /* z-index: 50; */
+}
+
+#hero-img-top div {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: white;
+    z-index: 50;
+    background-color: #89aec1;
+    background-image: linear-gradient(315deg, #89aec1 0%, #c2c0c0 74%);
+    transition: all 0.5s;
+    animation: wiggleLess 0.5s alternate infinite;
+}
+
+#hero-img-top i {
+    font-size: 2.4rem;
+    z-index: 100;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    transform: rotate(-45deg);
+    color: white;
+    transition: all 0.5s;
+    animation: wiggleMore 0.5s alternate infinite;
+}
+
+/* Float Part */
+
+.float-box {
+    /* height: 25vw; */
+    width: 22rem;
+    position: absolute;
+    right: -10rem;
+    top: 6rem;
+    background-color: white;
+    border-radius: 2rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+.float-content {
+    padding: 1.4rem;
+}
+
+.float-img-container {
+    width: 100%;
+    height: 14vw;
+    border-radius: 2rem;
+    background-color: orangered;
+    z-index: 210;
+    margin-bottom: 1.4rem;
+    overflow: hidden;
+}
+
+.float-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.float-para {
+    font-size: 1.4rem;
+    width: 80%;
+    font-weight: 600;
+    margin-left: 0.6rem;
+}
+
+.float-box .horizontal-line {
+    width: 100%;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.float-about {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.4rem 2rem;
+}
+
+.float-about-img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.float-about-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.float-about-detail h3 {
+    font-size: 1.6rem;
+}
+
+.float-about-detail p {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Changes made with selection */
+
+#hero-section #type-reforestation:checked ~ #float-boxes #float-box1,
+#hero-section #type-vegetation:checked ~ #float-boxes #float-box2,
+#hero-section #type-nature:checked ~ #float-boxes #float-box3 {
+    z-index: 500;
+    /* transform: translateX(0); */
+    opacity: 1;
+    /* transition: all linear 0.5s; */
+    animation: toRight ease-out 0.8s;
+}
+
+#hero-section #type-reforestation:not(:checked) ~ #float-boxes #float-box1,
+#hero-section #type-vegetation:not(:checked) ~ #float-boxes #float-box2,
+#hero-section #type-nature:not(:checked) ~ #float-boxes #float-box3 {
+    /* transform: translateX(-40rem); */
+    z-index: -10;
+    opacity: 0;
+    /* transition: all 0.5s; */
+}
+
+/* MEDIA QUERIES */
+
+@media (hover: hover) {
+    #hamburger-icon:hover {
+        cursor: pointer;
+    }
+
+    #hamburger-icon:hover div,
+    #hamburger-icon:hover div::before,
+    #hamburger-icon:hover div::after {
+        background-color: #ebebeb;
+    }
+
+    nav a:hover {
+        color: #ebebeb;
+    }
+
+    nav a::after,
+    nav #hamburger-icon::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        bottom: -100%;
+        background-color: var(--color-black);
+        border-radius: 50%;
+        transition: all ease 0.4s;
+        z-index: -1;
+    }
+
+    nav a:hover::after {
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    nav #hamburger-icon:hover::after {
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    /* #hero-section a:hover {
+        background-color: var(--color-black);
+        color: #ebebeb;
+    } */
+}
+
+@media (max-width: 1100px) {
+    #user-reviews {
+        display: none;
+    }
+
+    #float-boxes {
+        position: relative;
+        height: 1rem;
+        width: 100%;
+        background-color: black;
+        margin-top: 4rem;
+    }
+
+    .float-box {
+        left: 0;
+        top: 0;
+        display: block;
+        width: 35rem;
+        height: 17rem;
+    }
+
+    .float-content {
+        height: 100%;
+        display: inline-block;
+    }
+
+    .float-box .horizontal-line {
+        display: none;
+    }
+
+    .float-img-container {
+        height: 100%;
+        width: 50%;
+        display: inline-block;
+    }
+
+    .float-para {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+/* ANIAMTIONS */
+
+@keyframes wiggleLess {
+    from {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    to {
+        top: 0.7rem;
+        right: 0.7rem;
+    }
+}
+
+@keyframes wiggleMore {
+    from {
+        top: 4rem;
+        right: 4rem;
+    }
+
+    to {
+        top: 3rem;
+        right: 3rem;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        transform: translateX(-30rem);
+        opacity: 0;
+    }
+
+    80% {
+        transform: translateX(5rem);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
